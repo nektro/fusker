@@ -34,3 +34,11 @@ a {
         background-image: radial-gradient(white, green);
     }
 }
+footer {
+    display: flex;
+    justify-content: center;
+
+    span {
+        padding: .1em;
+    }
+}
