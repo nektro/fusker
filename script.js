@@ -67,7 +67,7 @@ else {
 
     section_images.children[4].children[0].addEventListener("click", function() {
         if (image_urls.length >= image_max) {
-            image_max += 50;
+            image_max += 100;
         }
         else {
             this.textContent = "Done!";
