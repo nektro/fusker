@@ -22,7 +22,7 @@ else {
     const image_urls = [];
     const url_sp = here.searchParams.get("url");
     const url = url_sp.endsWith("/") ? url_sp : `${url_sp}/`;
-    const valid_extentions = ["png","jpg","jpeg"];
+    const valid_extentions = ["png","jpg","jpeg","gif"];
 
     let image_index = 0;
     let image_max = 50;
