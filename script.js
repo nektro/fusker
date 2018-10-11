@@ -20,7 +20,8 @@ else {
 
     const PROXY = "https://cors.io/?";
     const image_urls = [];
-    const url = here.searchParams.get("url");
+    const url_sp = here.searchParams.get("url");
+    const url = url_sp.endsWith("/") ? url_sp : `${url_sp}/`;
     const valid_extentions = ["png","jpg","jpeg"];
 
     let image_index = 0;
