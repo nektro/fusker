@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Image Fusker</title>
+        <link rel="stylesheet" href="./style.min.css">
+        <script type="module" src="https://cdn.jsdelivr.net/gh/nektro/fluent_design.js@0f4a5cafbc96084deb619abec4e0edd2849d77aa/src/FluentTextboxElement.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/nektro/fluent_design.js@0f4a5cafbc96084deb619abec4e0edd2849d77aa/src/FluentButtonElement.js"></script>
+        <script type="module" src="./script.js"></script>
+    </head>
+    <body>
+        <h1><a href="./">Fusker</a></h1>
+        <p>Image Extraction Tool</p>
+        <hr>
+        <section id="section-submit">
+            <fl-textbox id="site-url" name="link" type="text" placeholder="https://"></fl-textbox>
+            <fl-button id="button" label="Submit Query"></fl-button>
+        </section>
+        <section id="section-images">
+            <h1><a target="_blank" class="spin">👁️</a></h1>
+            <p></p>
+            <div></div>
+            <br>
+            <div>
+                <button hidden>Load more...</button>
+            </div>
+        </section>
+    </body>
+</html>
