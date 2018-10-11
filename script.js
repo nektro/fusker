@@ -44,7 +44,7 @@ else {
             const ext = (link.getAttribute('href').toLowerCase().split(".").reverse()[0]);
     
             if (valid_extentions.includes(ext)) {
-                image_urls.push(`${url}${link.getAttribute('href')}`);
+                image_urls.push(link.getAttribute('href'));
             }
         }
 
@@ -56,7 +56,7 @@ else {
         if (image_urls.length > image_index && image_index < image_max) {
             image_index += 1;
             const i = document.createElement("img")
-            i.setAttribute("src", image_urls[image_index-1]);
+            i.setAttribute("src", `${url}${image_urls[image_index-1]}`);
             i.setAttribute("width", (100).toString());
             i.setAttribute("height", (100).toString());
             section_images.children[2].appendChild(i);
