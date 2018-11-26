@@ -28,23 +28,24 @@ else {
     let image_max = 50;
 
     Promise.resolve(PROXY + url)
-    .then(a => fetch(a))
-    .then(a => a.text())
-    .then(a => {
+    .then(url => fetch(url))
+    .then(response => response.text())
+    .then(text => {
         const ele = document.createElement("html");
-        ele.innerHTML = a;
+        ele.innerHTML = text;
         return ele;
     })
-    .then(a => {
+    .then(html => {
         section_images.children[0].children[0].classList.remove("spin");
         section_images.children[0].children[0].textContent = url;
         section_images.children[0].children[0].setAttribute("href", url);
 
-        for (const link of a.querySelectorAll("a")) {
-            const ext = (link.getAttribute("href").toLowerCase().split(".").reverse()[0]);
+        for (const a of html.querySelectorAll("a")) {
+            const url = a.getAttribute("href");
+            const ext = (url.toLowerCase().split(".").reverse()[0]);
     
             if (valid_extentions.includes(ext)) {
-                image_urls.push(link.getAttribute("href"));
+                image_urls.push(url);
             }
         }
 
