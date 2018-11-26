@@ -35,13 +35,12 @@ else {
         ele.innerHTML = a;
         return ele;
     })
-    .then(a => a.querySelectorAll("a"))
     .then(a => {
         section_images.children[0].children[0].classList.remove("spin");
         section_images.children[0].children[0].textContent = url;
         section_images.children[0].children[0].setAttribute("href", url);
 
-        for (const link of a) {
+        for (const link of a.querySelectorAll("a")) {
             const ext = (link.getAttribute('href').toLowerCase().split(".").reverse()[0]);
     
             if (valid_extentions.includes(ext)) {
