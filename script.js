@@ -41,10 +41,10 @@ else {
         section_images.children[0].children[0].setAttribute("href", url);
 
         for (const link of a.querySelectorAll("a")) {
-            const ext = (link.getAttribute('href').toLowerCase().split(".").reverse()[0]);
+            const ext = (link.getAttribute("href").toLowerCase().split(".").reverse()[0]);
     
             if (valid_extentions.includes(ext)) {
-                image_urls.push(link.getAttribute('href'));
+                image_urls.push(link.getAttribute("href"));
             }
         }
 
