@@ -57,7 +57,8 @@ else {
         if (image_urls.length > image_index && image_index < image_max) {
             image_index += 1;
             const i = document.createElement("img")
-            i.setAttribute("src", `${url}${image_urls[image_index-1]}`);
+            const u = image_urls[image_index-1];
+            i.setAttribute("src", (u.startsWith("//")||u.startsWith("http"))?u:`${url}${u}`);
             i.setAttribute("width", (100).toString());
             i.setAttribute("height", (100).toString());
             section_images.children[2].appendChild(i);
