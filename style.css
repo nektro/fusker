@@ -24,21 +24,20 @@ a {
 #section-submit fl-button {
     margin-top: 0;
 }
-#section-images div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    img {
-        background-image: radial-gradient(white, green);
-    }
+#section-images div img {
+    background-image: radial-gradient(white, green);
 }
 footer {
     display: flex;
     justify-content: center;
-
-    span {
-        padding: .1em;
-    }
+}
+footer span {
+    padding: .1em;
+}
+progress {
+    margin-bottom: 1em;
+}
+x-image, img {
+    display: block;
+    margin: 0 auto;
 }
