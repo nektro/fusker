@@ -36,6 +36,7 @@ footer span {
 }
 progress {
     margin-bottom: 1em;
+    width: 100%;
 }
 x-image, img {
     display: block;
