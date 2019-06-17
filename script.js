@@ -17,6 +17,7 @@ if (!(here.searchParams.has("url"))) {
 else {
     const section_images = document.getElementById("section-images");
     section_images.style.display = "block";
+    const pr = section_images.querySelector("progress");
 
     const PROXY = "https://cors.io/?";
     const image_urls = [];
@@ -41,38 +42,32 @@ else {
         section_images.children[0].children[0].setAttribute("href", url);
 
         for (const a of html.querySelectorAll("a")) {
-            const url = a.getAttribute("href");
-            const ext = (url.toLowerCase().split(".").reverse()[0]);
-    
-            if (valid_extentions.includes(ext)) {
-                image_urls.push(url);
+            if (a.hasAttribute("href")) {
+                const url = a.getAttribute("href");
+                const ext = (url.toLowerCase().split(".").reverse()[0]);
+        
+                if (valid_extentions.includes(ext)) {
+                    image_urls.push(url);
+                }
             }
         }
 
         section_images.children[1].textContent = `${image_urls.length} Results`;
-        section_images.children[4].children[0].removeAttribute("hidden");
+        pr.max = image_urls.length;
     });
 
     function load_next_image() {
-        if (image_urls.length > image_index && image_index < image_max) {
+        if (image_urls.length > image_index) {
             image_index += 1;
-            const i = document.createElement("img")
+            const i = document.createElement("x-image")
             const u = image_urls[image_index-1];
-            i.setAttribute("src", (u.startsWith("//")||u.startsWith("http"))?u:`${url}${u}`);
+            i.setAttribute("data-src", (u.startsWith("//")||u.startsWith("http"))?u:`${url}${u}`);
             i.setAttribute("width", (100).toString());
             i.setAttribute("height", (100).toString());
-            section_images.children[2].appendChild(i);
+            section_images.children[3].appendChild(i);
+            pr.value += 1;
         }
         requestAnimationFrame(load_next_image);
     }
     load_next_image();
-
-    section_images.children[4].children[0].addEventListener("click", function() {
-        if (image_urls.length >= image_max) {
-            image_max += 100;
-        }
-        else {
-            this.textContent = "Done!";
-        }
-    });
 }
