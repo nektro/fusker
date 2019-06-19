@@ -27,11 +27,7 @@ a {
 #section-images div img {
     background-image: radial-gradient(white, green);
 }
-footer {
-    display: flex;
-    justify-content: center;
-}
-footer span {
+footer div {
     padding: .1em;
 }
 progress {
