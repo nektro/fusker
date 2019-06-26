@@ -54,6 +54,10 @@ else {
 
         section_images.children[1].textContent = `${image_urls.length} Results`;
         pr.max = image_urls.length;
+    })
+    .catch(err => {
+        section_images.children[0].children[0].classList.remove("spin");
+        section_images.children[5].children[0].textContent = `❌ ${err}`;
     });
 
     function load_next_image() {
