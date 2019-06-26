@@ -19,7 +19,7 @@ else {
     section_images.style.display = "block";
     const pr = section_images.querySelector("progress");
 
-    const PROXY = "https://cors.io/?";
+    const PROXY = "https://cors-anywhere.herokuapp.com/";
     const image_urls = [];
     const url_sp = here.searchParams.get("url");
     const url = url_sp.endsWith("/") ? url_sp : `${url_sp}/`;
